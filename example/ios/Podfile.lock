@@ -1,5 +1,5 @@
 PODS:
-  - Flutter (1.22.4)
+  - Flutter (1.0.0)
   - flutter_esc_pos (0.0.1):
     - Flutter
 
@@ -14,7 +14,7 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_esc_pos/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 663922cc93aceb99c94ea74f4cf529cd383a10a9
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_esc_pos: a26c9f88f1dfaac2c1483ca1de9e64b85dc4e33d
 
 PODFILE CHECKSUM: 927e18acc1f56b01f1d2c4167b9d896ce6fde544

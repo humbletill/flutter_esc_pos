@@ -20,7 +20,6 @@
 		BE1AE49A25CBFE9F00B5B173 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1AE49925CBFE9F00B5B173 /* CoreNFC.framework */; };
 		BE1AE4A225CC006200B5B173 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1AE4A125CC006200B5B173 /* ExternalAccessory.framework */; };
 		BE32CDAE25D2CF7F00687E79 /* libepos2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE32CDAD25D2CF7F00687E79 /* libepos2.a */; };
-		BE32CDB025D2CFA000687E79 /* ePOS2.h in Frameworks */ = {isa = PBXBuildFile; fileRef = BE32CDAF25D2CFA000687E79 /* ePOS2.h */; };
 		BEB3BAE125D2979D00E69DCF /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1AE49525CBFE7D00B5B173 /* libxml2.2.tbd */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +74,6 @@
 				BE1AE49825CBFE9900B5B173 /* CoreLocation.framework in Frameworks */,
 				BE1AE49A25CBFE9F00B5B173 /* CoreNFC.framework in Frameworks */,
 				BE1AE4A225CC006200B5B173 /* ExternalAccessory.framework in Frameworks */,
-				BE32CDB025D2CFA000687E79 /* ePOS2.h in Frameworks */,
 				BE32CDAE25D2CF7F00687E79 /* libepos2.a in Frameworks */,
 				BE1AE49325CBFD4400B5B173 /* libeposeasyselect.a in Frameworks */,
 				0551B0B57E5A6EAC0B7183A2 /* libPods-Runner.a in Frameworks */,
