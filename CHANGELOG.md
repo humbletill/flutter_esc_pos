@@ -1,3 +1,7 @@
+## 0.0.3
+
+- Do not use
+
 ## 0.0.2+2
 
 - Added Epson Printer Series
