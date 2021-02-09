@@ -1,3 +1,8 @@
+## 0.0.2+2
+
+- Added Epson Printer Series
+- Do not use
+
 ## 0.0.1+1
 
 - Initial Commit
