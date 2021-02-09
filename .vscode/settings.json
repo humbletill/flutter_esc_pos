@@ -53,7 +53,7 @@
 		".idea": true,
 		"build": true,
 		".gitignore": false,
-		".gitattributes": true,
+		".gitattributes": false,
 		"README.md": true,
 		"functions/node_modules": true,
 		"functions/*.json": true,
