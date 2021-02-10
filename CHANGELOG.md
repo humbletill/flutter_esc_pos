@@ -1,3 +1,7 @@
+## 0.0.5
+
+- Linked ePOS2.h
+
 ## 0.0.4
 
 - Clean Install
