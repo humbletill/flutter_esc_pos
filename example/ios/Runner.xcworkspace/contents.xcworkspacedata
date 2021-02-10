@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../../../../../Volumes/Will 32GB/Plugin/iOS Files/ePOS2.h">
+      location = "group:Runner.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Runner.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
