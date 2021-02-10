@@ -75,7 +75,7 @@ public class SwiftFlutterEscPosPlugin: NSObject, FlutterPlugin, Epos2DiscoveryDe
     }
     
     public func printList(_ list: [[String : Any]]?, toPrinter target: String?, withPrinterSeries printerSeries: Epos2PrinterSeries) -> String? {
-        var printer:Epos2Printer? = Epos2Printer(printerSeries: printerSeries.rawValue, lang: EPOS2_MODEL_ANK.rawValue)
+        let printer:Epos2Printer? = Epos2Printer(printerSeries: printerSeries.rawValue, lang: EPOS2_MODEL_ANK.rawValue)
 
         if printer == nil {
            return "Printer Did Not Init"
@@ -112,7 +112,7 @@ public class SwiftFlutterEscPosPlugin: NSObject, FlutterPlugin, Epos2DiscoveryDe
         }
         
         result = EPOS2_SUCCESS
-        if let newResult = printer?.connect(target, timeout: EPOS2_PARAM_DEFAULT.hashValue) {
+        if (printer?.connect(target, timeout: EPOS2_PARAM_DEFAULT.hashValue)) != nil {
             result = EPOS2_SUCCESS
         } else {
             result = EPOS2_ERR_FAILURE
