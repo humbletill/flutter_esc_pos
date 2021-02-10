@@ -18,10 +18,7 @@
 		BE1E695225D3D52100D1064D /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1E695125D3D52100D1064D /* libxml2.2.tbd */; };
 		BE1E695425D3D53B00D1064D /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1E695325D3D53B00D1064D /* ExternalAccessory.framework */; };
 		BE1E695625D3D5D500D1064D /* libepos2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1E695525D3D5D500D1064D /* libepos2.a */; };
-		BE421AE225D3E7D4006A8B41 /* ePOS2.h in Sources */ = {isa = PBXBuildFile; fileRef = BE18222625D3DD0C002DA49B /* ePOS2.h */; };
-		BE421AE625D3E824006A8B41 /* ePOS2.h in Sources */ = {isa = PBXBuildFile; fileRef = BE421AE325D3E824006A8B41 /* ePOS2.h */; };
-		BE421AE725D3E824006A8B41 /* FlutterEscPosPlugin.h in Sources */ = {isa = PBXBuildFile; fileRef = BE421AE425D3E824006A8B41 /* FlutterEscPosPlugin.h */; };
-		BE421AE825D3E824006A8B41 /* FlutterEscPosPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = BE421AE525D3E824006A8B41 /* FlutterEscPosPlugin.m */; };
+		BEA6DFE225D3EA510071BF67 /* ePOS2.h in Sources */ = {isa = PBXBuildFile; fileRef = BE421AE325D3E824006A8B41 /* ePOS2.h */; };
 		BEBB642125D3E0EF00ECF910 /* ePOS2.h in Frameworks */ = {isa = PBXBuildFile; fileRef = BE18222625D3DD0C002DA49B /* ePOS2.h */; };
 /* End PBXBuildFile section */
 
@@ -309,10 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE421AE625D3E824006A8B41 /* ePOS2.h in Sources */,
-				BE421AE725D3E824006A8B41 /* FlutterEscPosPlugin.h in Sources */,
-				BE421AE825D3E824006A8B41 /* FlutterEscPosPlugin.m in Sources */,
-				BE421AE225D3E7D4006A8B41 /* ePOS2.h in Sources */,
+				BEA6DFE225D3EA510071BF67 /* ePOS2.h in Sources */,
 				978B8F6F1D3862AE00F588F7 /* AppDelegate.m in Sources */,
 				97C146F31CF9000F007C117D /* main.m in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
