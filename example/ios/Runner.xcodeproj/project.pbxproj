@@ -18,7 +18,9 @@
 		BE1E695225D3D52100D1064D /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1E695125D3D52100D1064D /* libxml2.2.tbd */; };
 		BE1E695425D3D53B00D1064D /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1E695325D3D53B00D1064D /* ExternalAccessory.framework */; };
 		BE1E695625D3D5D500D1064D /* libepos2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1E695525D3D5D500D1064D /* libepos2.a */; };
-		BEA6DFE225D3EA510071BF67 /* ePOS2.h in Sources */ = {isa = PBXBuildFile; fileRef = BE421AE325D3E824006A8B41 /* ePOS2.h */; };
+		BE73325B25D3FA5400EB81E6 /* ePOS2.h in Resources */ = {isa = PBXBuildFile; fileRef = BE421AE325D3E824006A8B41 /* ePOS2.h */; };
+		BE73325C25D3FA5400EB81E6 /* FlutterEscPosPlugin.h in Resources */ = {isa = PBXBuildFile; fileRef = BE421AE425D3E824006A8B41 /* FlutterEscPosPlugin.h */; };
+		BE73325F25D3FA5400EB81E6 /* libepos2.a in Resources */ = {isa = PBXBuildFile; fileRef = BE1E695525D3D5D500D1064D /* libepos2.a */; };
 		BEBB642125D3E0EF00ECF910 /* ePOS2.h in Frameworks */ = {isa = PBXBuildFile; fileRef = BE18222625D3DD0C002DA49B /* ePOS2.h */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +58,6 @@
 		BE1E695125D3D52100D1064D /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		BE1E695325D3D53B00D1064D /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		BE1E695525D3D5D500D1064D /* libepos2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libepos2.a; sourceTree = "<group>"; };
-		BE1E695725D3D74700D1064D /* FlutterEscPos-Bridging-Header.h.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlutterEscPos-Bridging-Header.h.h"; sourceTree = "<group>"; };
 		BE421AE325D3E824006A8B41 /* ePOS2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ePOS2.h; path = ../../ios/Classes/ePOS2.h; sourceTree = "<group>"; };
 		BE421AE425D3E824006A8B41 /* FlutterEscPosPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FlutterEscPosPlugin.h; path = ../../ios/Classes/FlutterEscPosPlugin.h; sourceTree = "<group>"; };
 		BE421AE525D3E824006A8B41 /* FlutterEscPosPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FlutterEscPosPlugin.m; path = ../../ios/Classes/FlutterEscPosPlugin.m; sourceTree = "<group>"; };
@@ -69,9 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1E695425D3D53B00D1064D /* ExternalAccessory.framework in Frameworks */,
 				BEBB642125D3E0EF00ECF910 /* ePOS2.h in Frameworks */,
 				BE1E695625D3D5D500D1064D /* libepos2.a in Frameworks */,
-				BE1E695425D3D53B00D1064D /* ExternalAccessory.framework in Frameworks */,
 				BE1E695225D3D52100D1064D /* libxml2.2.tbd in Frameworks */,
 				A71C03D00C5573CEEA0F2D4D /* libPods-Runner.a in Frameworks */,
 			);
@@ -107,7 +108,6 @@
 				BE421AE325D3E824006A8B41 /* ePOS2.h */,
 				BE421AE425D3E824006A8B41 /* FlutterEscPosPlugin.h */,
 				BE421AE525D3E824006A8B41 /* FlutterEscPosPlugin.m */,
-				BE1E695725D3D74700D1064D /* FlutterEscPos-Bridging-Header.h.h */,
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
@@ -222,6 +222,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE73325B25D3FA5400EB81E6 /* ePOS2.h in Resources */,
+				BE73325C25D3FA5400EB81E6 /* FlutterEscPosPlugin.h in Resources */,
+				BE73325F25D3FA5400EB81E6 /* libepos2.a in Resources */,
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
@@ -306,7 +309,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEA6DFE225D3EA510071BF67 /* ePOS2.h in Sources */,
 				978B8F6F1D3862AE00F588F7 /* AppDelegate.m in Sources */,
 				97C146F31CF9000F007C117D /* main.m in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
@@ -378,7 +380,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
@@ -396,6 +400,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 5LJJP22TK5;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
@@ -410,8 +415,10 @@
 					"$(PROJECT_DIR)/Flutter",
 					"$(PROJECT_DIR)",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.humblepos.flutterEscPosExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Profile;
@@ -465,7 +472,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/\"";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -517,7 +526,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
@@ -535,6 +546,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 5LJJP22TK5;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
@@ -549,6 +561,7 @@
 					"$(PROJECT_DIR)/Flutter",
 					"$(PROJECT_DIR)",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.humblepos.flutterEscPosExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -563,6 +576,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 5LJJP22TK5;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
@@ -577,8 +591,10 @@
 					"$(PROJECT_DIR)/Flutter",
 					"$(PROJECT_DIR)",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.humblepos.flutterEscPosExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

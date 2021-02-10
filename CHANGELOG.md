@@ -1,3 +1,7 @@
+## 0.0.6+1
+
+- XCode Changes
+
 ## 0.0.6
 
 - Added to Compile Sources

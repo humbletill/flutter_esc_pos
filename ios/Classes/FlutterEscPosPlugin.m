@@ -1,5 +1,4 @@
 #import "FlutterEscPosPlugin.h"
-#import "ePOS2.h"
 
 @interface FlutterEscPosPlugin () <Epos2PtrReceiveDelegate,Epos2DiscoveryDelegate>
 @property (nonatomic) FlutterMethodChannel *channel;
