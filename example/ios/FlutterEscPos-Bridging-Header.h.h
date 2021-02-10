@@ -8,6 +8,6 @@
 #ifndef FlutterEscPos_Bridging_Header_h_h
 #define FlutterEscPos_Bridging_Header_h_h
 
-#import "ePOS.h"
+#import "ePOS2.h"
 
 #endif /* FlutterEscPos_Bridging_Header_h_h */

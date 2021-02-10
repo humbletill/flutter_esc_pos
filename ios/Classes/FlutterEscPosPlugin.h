@@ -1,6 +1,6 @@
 #import <Flutter/Flutter.h>
 #import "ePOS2.h"
-#import "ePOSEasySelect.h"
+//#import "ePOSEasySelect.h"
 
 @interface FlutterEscPosPlugin : NSObject<FlutterPlugin, Epos2DiscoveryDelegate>
 

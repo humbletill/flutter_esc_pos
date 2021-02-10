@@ -1,3 +1,7 @@
+## 0.0.4
+
+- Clean Install
+
 ## 0.0.3
 
 - Do not use

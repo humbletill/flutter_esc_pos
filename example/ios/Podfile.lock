@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.22.6)
+  - flutter_esc_pos (0.0.4):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_esc_pos (from `.symlinks/plugins/flutter_esc_pos/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_esc_pos:
+    :path: ".symlinks/plugins/flutter_esc_pos/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 997add02a1e8d5c69d8695379232aa94eb568d4e
+  flutter_esc_pos: ed337ab76d3716b03bbdc6bb34975a5ba89b0e47
+
+PODFILE CHECKSUM: 8e679eca47255a8ca8067c4c67aab20e64cb974d
+
+COCOAPODS: 1.10.1
