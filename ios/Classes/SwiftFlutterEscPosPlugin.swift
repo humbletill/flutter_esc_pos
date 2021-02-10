@@ -1,9 +1,11 @@
 import Flutter
 import UIKit
 
-private var myChannel:FlutterMethodChannel?
+public var myChannel:FlutterMethodChannel?
 
-public class SwiftFlutterEscPosPlugin: NSObject, FlutterPlugin, Epos2PtrReceiveDelegate, Epos2DiscoveryDelegate {
+public class SwiftFlutterEscPosPlugin: NSObject, FlutterPlugin, Epos2DiscoveryDelegate {
+    
+
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "flutter_esc_pos", binaryMessenger: registrar.messenger())
         let instance = SwiftFlutterEscPosPlugin()
@@ -55,9 +57,9 @@ public class SwiftFlutterEscPosPlugin: NSObject, FlutterPlugin, Epos2PtrReceiveD
             bdAddress = macAddress
         }
 
-        let printerObj = [
-            "target": target,
-            "deviceName": deviceName,
+        let printerObj:[String : Any] = [
+            "target": target ?? "",
+            "deviceName": deviceName ?? "",
             "ipAddress": ipAddress ?? "",
             "macAddress": macAddress ?? "",
             "bdAddress": bdAddress ?? "",
@@ -66,7 +68,7 @@ public class SwiftFlutterEscPosPlugin: NSObject, FlutterPlugin, Epos2PtrReceiveD
             "connectionType": connectionType,
             "printerSeries": NSNumber(value: printerSeries),
         ]
-        myChannel.invokeMethod("flutter_esc_pos#deviceInfo", arguments: printerObj)
+        self.myChannel.invokeMethod("flutter_esc_pos#deviceInfo", arguments: printerObj)
     }
     
     public func printList(_ list: [AnyHashable]?, toPrinter target: String?, withPrinterSeries printerSeries: Int) -> String? {
@@ -125,9 +127,9 @@ public class SwiftFlutterEscPosPlugin: NSObject, FlutterPlugin, Epos2PtrReceiveD
         return "OK"
     }
     
-    public func getPrinterSeries(_ printerName: String?) -> Int {
+    public func getPrinterSeries(_ printerName: String?) -> Epos2PrinterSeries {
         var printerName = printerName
-        var series = EPOS2_TM_T20
+        var series:Epos2PrinterSeries = EPOS2_TM_T20
 
         printerName = printerName?.uppercased()
 
