@@ -19,16 +19,19 @@ public class SwiftFlutterEscPosPlugin: NSObject, FlutterPlugin, Epos2DiscoveryDe
         if "getPlatformVersion" == call.method {
             result("iOS " + UIDevice.current.systemVersion)
         } else if "startPrinterDiscovery" == call.method {
-            let option = Epos2FilterOption()
-            option.portType = EPOS2_PORTTYPE_ALL
-            option.deviceModel = EPOS2_MODEL_ALL
-            Epos2Discovery.start(option, delegate: self as? Epos2DiscoveryDelegate?)
+            let option:Epos2FilterOption = Epos2FilterOption()
+            option.portType = EPOS2_PORTTYPE_ALL.rawValue
+            option.deviceModel = EPOS2_MODEL_ALL.rawValue
+            Epos2Discovery.start(option, delegate: self)
             result("success")
         } else if "stopPrinterDiscovery" == call.method {
             Epos2Discovery.stop()
             result("success")
         } else if "printList" == call.method {
-            result(printList(call.arguments["list"] as? [String], toPrinter: call.arguments["printer"], withPrinterSeries: (call.arguments["printerSeries"] as? Int).intValue))
+            let list:[[String : Any]] = (call.arguments as! [String : Any]) ["list"] as! [[String : Any]]
+            let target:String = (call.arguments as! [String : Any]) ["printer"] as! String
+            let printerSeries:Epos2PrinterSeries = (call.arguments as! [String : Any]) ["printerSeries"] as! Epos2PrinterSeries
+            result(printList(list, toPrinter: target, withPrinterSeries: printerSeries))
         } else {
             result(FlutterMethodNotImplemented)
         }
@@ -39,8 +42,8 @@ public class SwiftFlutterEscPosPlugin: NSObject, FlutterPlugin, Epos2DiscoveryDe
     }
     
     public func onDiscovery(_ deviceInfo: Epos2DeviceInfo?) {
-        var target = deviceInfo?.target
-        var deviceName = deviceInfo?.deviceName
+        let target = deviceInfo?.target
+        let deviceName = deviceInfo?.deviceName
         var ipAddress = deviceInfo?.ipAddress
         var macAddress = deviceInfo?.macAddress
         var bdAddress = deviceInfo?.bdAddress
@@ -66,62 +69,72 @@ public class SwiftFlutterEscPosPlugin: NSObject, FlutterPlugin, Epos2DiscoveryDe
             "deviceType": NSNumber(value: deviceInfo?.deviceType ?? 0),
             "printerType": printerType,
             "connectionType": connectionType,
-            "printerSeries": NSNumber(value: printerSeries),
+            "printerSeries": NSNumber(value: printerSeries.rawValue),
         ]
-        self.myChannel.invokeMethod("flutter_esc_pos#deviceInfo", arguments: printerObj)
+        myChannel?.invokeMethod("flutter_esc_pos#deviceInfo", arguments: printerObj)
     }
     
-    public func printList(_ list: [AnyHashable]?, toPrinter target: String?, withPrinterSeries printerSeries: Int) -> String? {
-        print(String(format: "===================== printer: %@ | series: %lu | List: %@", target ?? "", printerSeries, list ?? []))
-        var printer: Epos2Printer? = nil
-        printer = Epos2Printer(printerSeries: printerSeries, lang: EPOS2_MODEL_ANK)
+    public func printList(_ list: [[String : Any]]?, toPrinter target: String?, withPrinterSeries printerSeries: Epos2PrinterSeries) -> String? {
+        var printer:Epos2Printer? = Epos2Printer(printerSeries: printerSeries.rawValue, lang: EPOS2_MODEL_ANK.rawValue)
 
         if printer == nil {
            return "Printer Did Not Init"
         }
-        printer.receiveEventDelegate = self
-        let result = EPOS2_SUCCESS
+//        printer.receiveEventDelegate = self
+        var result:Epos2ErrorStatus = EPOS2_SUCCESS
         
-        for map in list {
-            if "text" == map["key"] {
-                printer.addText(map["value"])
-            } else if "textRight" == map["key"] {
-                printer.addTextAlign(EPOS2_ALIGN_RIGHT)
-                printer.addText(map["value"])
-                printer.addTextAlign(EPOS2_ALIGN_LEFT)
-            } else if "textCenter" == map["key"] {
-                printer.addTextAlign(EPOS2_ALIGN_CENTER)
-                printer.addText(map["value"])
-                printer.addTextAlign(EPOS2_ALIGN_LEFT)
-            } else if "feed" == map["key"] {
-                printer.addFeedLine(map["value"].intValue)
-            } else if "hline" == map["key"] {
-                printer.addHLine(0, x2: 65535, style: map["value"].intValue)
-            } else if "cut" == map["key"] {
-                printer.addCut(map["value"].intValue)
-            } else if "drawer" == map["key"] {
-                printer.addPulse(EPOS2_DRAWER_5PIN, time: EPOS2_PARAM_DEFAULT)
-            } else {
-                print("===================== [\(map["key"])] not catered for!!!!!")
+        if let lists:[[String : Any]] = list {
+            for map:[String : Any] in lists {
+                for (key, value) in map {
+                    if "text" == key {
+                        printer?.addText(value as? String)
+                    } else if "textRight" == key {
+                        printer?.addTextAlign(EPOS2_ALIGN_RIGHT.rawValue)
+                        printer?.addText(value as? String)
+                        printer?.addTextAlign(EPOS2_ALIGN_LEFT.rawValue)
+                    } else if "textCenter" == key {
+                        printer?.addTextAlign(EPOS2_ALIGN_CENTER.rawValue)
+                        printer?.addText(value as? String)
+                        printer?.addTextAlign(EPOS2_ALIGN_LEFT.rawValue)
+                    } else if "feed" == key {
+                        printer?.addFeedLine(value as! Int)
+                    } else if "hline" == key {
+                        printer?.addHLine(0, x2: 65535, style: value as! Int32)
+                    } else if "cut" == key {
+                        printer?.addCut(value as! Int32)
+                    } else if "drawer" == key {
+                        printer?.addPulse(EPOS2_DRAWER_5PIN.rawValue, time: EPOS2_PARAM_DEFAULT.byteSwapped)
+                    } else {
+                        print("===================== [\(key)] not catered for!!!!!")
+                    }
+                }
             }
         }
         
         result = EPOS2_SUCCESS
-        result = printer.connect(target, timeout: EPOS2_PARAM_DEFAULT)
+        if let newResult = printer?.connect(target, timeout: EPOS2_PARAM_DEFAULT.hashValue) {
+            result = EPOS2_SUCCESS
+        } else {
+            result = EPOS2_ERR_FAILURE
+        }
         if result != EPOS2_SUCCESS {
             return "Printer Did Not Connect"
         } else if result == EPOS2_SUCCESS {
-            let status = printer.getStatus()
-            if status?.getConnection() {
-                result = printer.sendData(EPOS2_PARAM_DEFAULT)
-                printer.disconnect()
-                if result != EPOS2_SUCCESS {
-                    return "Printer Did Not Print"
-                } else {
-                    return "OK"
+            if let status:Epos2PrinterStatusInfo = printer?.getStatus() {
+                if status.connection == EPOS2_SUCCESS.rawValue {
+                    if let printResult = printer?.sendData(EPOS2_PARAM_DEFAULT.hashValue) {
+                        printer?.disconnect()
+                        if printResult == EPOS2_SUCCESS.rawValue {
+                            return "OK"
+                        } else {
+                            return "Printer Did Not Print"
+                        }
+                    } else {
+                        return "Printer did Not Print"
+                    }
                 }
             } else {
-                return "Get Status Failed"
+                return "Did Not Get Status"
             }
         }
         return "OK"
