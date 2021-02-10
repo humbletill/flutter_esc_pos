@@ -1,3 +1,7 @@
+## 0.0.6
+
+- Added to Compile Sources
+
 ## 0.0.5
 
 - Linked ePOS2.h

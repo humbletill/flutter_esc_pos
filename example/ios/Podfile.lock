@@ -1,6 +1,6 @@
 PODS:
   - Flutter (1.0.0)
-  - flutter_esc_pos (0.0.5):
+  - flutter_esc_pos (0.0.6):
     - Flutter
 
 DEPENDENCIES:
