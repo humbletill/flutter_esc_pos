@@ -3,7 +3,7 @@ import UIKit
 
 private var myChannel:FlutterMethodChannel?
 
-public class SwiftFlutterEscPosPlugin: NSObject, FlutterPlugin {
+public class SwiftFlutterEscPosPlugin: NSObject, FlutterPlugin, Epos2PtrReceiveDelegate, Epos2DiscoveryDelegate {
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "flutter_esc_pos", binaryMessenger: registrar.messenger())
         let instance = SwiftFlutterEscPosPlugin()

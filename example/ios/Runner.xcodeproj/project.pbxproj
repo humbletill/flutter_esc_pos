@@ -16,6 +16,7 @@
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		BECF5DB125D40636003E9656 /* libepos2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BECF5DB025D40636003E9656 /* libepos2.a */; };
 		BECF5DB325D40650003E9656 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECF5DB225D40650003E9656 /* ExternalAccessory.framework */; };
+		BECF5DE925D424F5003E9656 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BECF5DB425D4067C003E9656 /* libxml2.2.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,6 +63,7 @@
 				BECF5DB325D40650003E9656 /* ExternalAccessory.framework in Frameworks */,
 				906724FB53115883B0CF7B2C /* Pods_Runner.framework in Frameworks */,
 				BECF5DB125D40636003E9656 /* libepos2.a in Frameworks */,
+				BECF5DE925D424F5003E9656 /* libxml2.2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
