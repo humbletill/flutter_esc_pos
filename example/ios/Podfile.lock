@@ -1,6 +1,6 @@
 PODS:
   - Flutter (1.0.0)
-  - "flutter_esc_pos (0.0.6+1)":
+  - flutter_esc_pos (0.0.1):
     - Flutter
 
 DEPENDENCIES:
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  flutter_esc_pos: c1a43d718e8475f43bb03c870e1e20709d7961ab
+  flutter_esc_pos: e576983b5c6ed58ea9fec095ce50bed9d5d8c3e4
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 
