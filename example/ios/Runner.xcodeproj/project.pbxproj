@@ -14,6 +14,9 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
+		BE13A4DD25D551F200F6B8C3 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE13A4DC25D551F200F6B8C3 /* ExternalAccessory.framework */; };
+		BE13A4DF25D551FC00F6B8C3 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE13A4DE25D551FC00F6B8C3 /* libxml2.2.tbd */; };
+		BE13A4E325D5524F00F6B8C3 /* libepos2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE13A4E225D5524F00F6B8C3 /* libepos2.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +49,9 @@
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C74BCAA1FD02BF1B4CA2177 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
+		BE13A4DC25D551F200F6B8C3 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		BE13A4DE25D551FC00F6B8C3 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		BE13A4E225D5524F00F6B8C3 /* libepos2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libepos2.a; sourceTree = "<group>"; };
 		D3CBAE454C2099FE4F4BA294 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -54,6 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE13A4DF25D551FC00F6B8C3 /* libxml2.2.tbd in Frameworks */,
+				BE13A4E325D5524F00F6B8C3 /* libepos2.a in Frameworks */,
+				BE13A4DD25D551F200F6B8C3 /* ExternalAccessory.framework in Frameworks */,
 				18C8755A76E8E6E5B22BBB96 /* Pods_Runner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +73,9 @@
 		4C9AFA8653D403C0E4792FFD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE13A4DE25D551FC00F6B8C3 /* libxml2.2.tbd */,
+				BE13A4E225D5524F00F6B8C3 /* libepos2.a */,
+				BE13A4DC25D551F200F6B8C3 /* ExternalAccessory.framework */,
 				D3CBAE454C2099FE4F4BA294 /* Pods_Runner.framework */,
 			);
 			name = Frameworks;
@@ -369,6 +381,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.humblepos.flutterEscPosExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -506,6 +519,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.humblepos.flutterEscPosExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -537,6 +551,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.humblepos.flutterEscPosExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";

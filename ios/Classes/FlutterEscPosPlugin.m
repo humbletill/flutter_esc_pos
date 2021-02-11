@@ -8,8 +8,47 @@
 #import "flutter_esc_pos-Swift.h"
 #endif
 
+//#import <flutter_esc_pos/ePOS2.h>
+
+@interface FlutterEscPosPlugin () <Epos2DiscoveryDelegate>
+@property (nonatomic) FlutterMethodChannel *channel;
+
+@end
+
 @implementation FlutterEscPosPlugin
+
+//@synthesize printer;
+//@synthesize filter;
+//@synthesize discovery;
+
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   [SwiftFlutterEscPosPlugin registerWithRegistrar:registrar];
+    
 }
+
+
+
+//- (void)onPtrReceive:(Epos2Printer *)printerObj code:(int)code status:(Epos2PrinterStatusInfo *)status printJobId:(NSString *)printJobId {
+////
+//}
+
+//- (void)startDiscover {
+//    self.filter = [[Epos2FilterOption alloc] init];
+//
+//
+////    self.discovery = [[Epos2Discovery alloc] init];
+//
+//
+////
+//}
+//
+- (void)onDiscovery:(Epos2DeviceInfo *)deviceInfo {
+    NSLog(@"==================== on Discovery: [%@]",deviceInfo.target);
+    
+    
+    
+//    SwiftFlutterEscPosPlugin *plug = [SwiftFlutterEscPosPlugin alloc] init];
+    
+}
+
 @end
