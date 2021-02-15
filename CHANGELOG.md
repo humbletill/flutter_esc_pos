@@ -1,3 +1,7 @@
+## 0.0.6+4
+
+- Recompiled
+
 ## 0.0.6+3
 
 - Added ePOSEasySelect.h
