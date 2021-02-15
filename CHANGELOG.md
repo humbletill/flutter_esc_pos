@@ -1,3 +1,7 @@
+## 0.0.6+3
+
+- Added ePOSEasySelect.h
+
 ## 0.0.6+2
 
 - iOS Working
