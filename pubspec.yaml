@@ -1,6 +1,6 @@
 name: flutter_esc_pos
-description: A new flutter plugin project.
-version: 0.0.6+1
+description: Flutter Plugin for Epson EPOS SDK
+version: 0.0.6+2
 # author: Williacdm Van Loggerenberg<will@humble.co.za>
 homepage: https://github.com/humbletill/flutter_esc_pos
 

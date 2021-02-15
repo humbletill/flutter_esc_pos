@@ -1,6 +1,7 @@
 import Flutter
 import UIKit
 
+
 public var myChannel:FlutterMethodChannel?
 
 
@@ -25,7 +26,9 @@ public class SwiftFlutterEscPosPlugin: NSObject, FlutterPlugin {
             fOption.portType = EPOS2_PORTTYPE_ALL.rawValue
             fOption.deviceModel = EPOS2_MODEL_ALL.rawValue
             let plug:FlutterEscPosPlugin = FlutterEscPosPlugin()
-            Epos2Discovery.start(fOption, delegate:self)
+            plug.startEpsonDiscovery(fOption, for: myChannel)
+//            FlutterEscPosPlugin.startEpsonDiscovery(fOption, for: myChannel)
+//            Epos2Discovery.start(filterOption: fOption, delegate:self)
             result("success")
         } else if "stopPrinterDiscovery" == call.method {
             Epos2Discovery.stop()
@@ -33,8 +36,9 @@ public class SwiftFlutterEscPosPlugin: NSObject, FlutterPlugin {
         } else if "printList" == call.method {
             let list:[[String : Any]] = (call.arguments as! [String : Any]) ["list"] as! [[String : Any]]
             let target:String = (call.arguments as! [String : Any]) ["printer"] as! String
-            let printerSeries:Epos2PrinterSeries = (call.arguments as! [String : Any]) ["printerSeries"] as! Epos2PrinterSeries
-            result(printList(list, toPrinter: target, withPrinterSeries: printerSeries))
+            let printerSeries:NSNumber = (call.arguments as! [String : Any]) ["printerSeries"] as! NSNumber
+            result(FlutterEscPosPlugin.printList(list, toPrinter: target, withPrinterSeries: printerSeries.int32Value))
+//            result(printList(list, toPrinter: target, withPrinterSeries: printerSeries))
         } else {
             result(FlutterMethodNotImplemented)
         }
@@ -78,8 +82,8 @@ public class SwiftFlutterEscPosPlugin: NSObject, FlutterPlugin {
         myChannel?.invokeMethod("flutter_esc_pos#deviceInfo", arguments: printerObj)
     }
     
-    public func printList(_ list: [[String : Any]]?, toPrinter target: String?, withPrinterSeries printerSeries: Epos2PrinterSeries) -> String? {
-        let printer:Epos2Printer? = Epos2Printer(printerSeries: printerSeries.rawValue, lang: EPOS2_MODEL_ANK.rawValue)
+    public func printList(_ list: [[String : Any]]?, toPrinter target: String?, withPrinterSeries printerSeries: NSNumber) -> String? {
+        let printer:Epos2Printer? = Epos2Printer(printerSeries: printerSeries.int32Value, lang: EPOS2_MODEL_ANK.rawValue)
 
         if printer == nil {
            return "Printer Did Not Init"

@@ -1,3 +1,7 @@
+## 0.0.6+2
+
+- iOS Working
+
 ## 0.0.6+1
 
 - XCode Changes
